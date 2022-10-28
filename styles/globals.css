@@ -24,3 +24,77 @@ a {
     background: black;
   }
 }
+
+.leaflet-container {
+  height: 1200px;
+  width: 100%;
+}
+
+.logo {
+  position: fixed;
+  right: 3rem;
+  top: 3rem;
+  z-index: 1000;
+}
+
+.button {
+  width: 10rem;
+  height: 3rem;
+  position: fixed;
+  top: 4rem;
+  transform: translateX(-50%);
+  left: 50%;
+  z-index:1000;
+  background-color: #000;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.button p {
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.overlay { 
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 10000;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form__container {
+  width: 50rem;
+  height: 30rem;
+  background-color: #fff;
+  position: relative;
+
+}
+
+.form__close {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  cursor: pointer;
+}
+
+.overlay--close {
+  display: none;
+}
+
+form {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+}
+
+.switch {
+  padding-top: 2rem;
+}

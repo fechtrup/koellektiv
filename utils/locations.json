@@ -1,0 +1,36 @@
+[
+    {
+        "name": "Trinkgenossen",
+        "permission": true,
+        "lat": "50.954450",
+        "lng": "6.918740"
+    },
+
+    {
+        "name": "Die hängenden Gärten von Ehrenfeld",
+        "permission": true,
+        "lat": "50.947240",
+        "lng": "6.916860"
+    },
+
+    {
+        "name": "Cafe Buur",
+        "permission": false,
+        "lat": "50.935610",
+        "lng": "6.933940"
+    },
+
+    {
+        "name": "Hellers Volksgarten",
+        "permission": true,
+        "lat": "50.922420",
+        "lng": "6.943860"
+    },
+
+    {
+        "name": "Engelbät",
+        "permission": false,
+        "lat": "50.931011",
+        "lng": "6.938990"
+    }
+]
