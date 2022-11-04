@@ -1,12 +1,12 @@
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import osm from "../utils/osm-providers";
 import L from "leaflet";
-import Locations from "../utils/locations.json";
 import Pin from "../public/images/pin.png";
 import PendingPin from "../public/images/pendingPin.png";
 import Form from "../components/Form";
 import { useDisclosure } from "@chakra-ui/react";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
 const markerIcon = new L.Icon({
   iconUrl: Pin.src,
@@ -25,8 +25,20 @@ const pendingIcon = new L.Icon({
 export default function Map() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [center] = useState({ lat: 50.937531, lng: 6.9602786 });
-  const [pins, setPins] = useState(Locations);
+  const [pins, setPins] = useState([]);
   const ZOOM_LEVEL = 14;
+  const supabaseClient = useSupabaseClient();
+
+  useEffect(() => {
+    supabaseClient
+      .from("pins")
+      .select("*")
+      .then((result) => {
+        if (result.data) {
+          setPins(result.data);
+        }
+      });
+  }, [supabaseClient]);
 
   return (
     <>
@@ -64,7 +76,8 @@ export default function Map() {
             const lng = event.latlng.lng;
             const pin = {
               name: "Trinkgenossen",
-              permission: true,
+              plakate: true,
+              flyer: true,
               lat,
               lng,
               isPending: true,
@@ -90,6 +103,11 @@ export default function Map() {
           >
             <Popup>
               <b>{pin.name}</b>
+              <br />
+              <br />
+              <b>Plakate: {String(pin.plakate)}</b>
+              <br />
+              <b>Flyer: {String(pin.flyer)}</b>
             </Popup>
           </Marker>
         ))}

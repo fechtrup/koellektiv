@@ -2,6 +2,9 @@ import "../styles/globals.css";
 import "leaflet/dist/leaflet.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import { extendTheme } from "@chakra-ui/react";
+import { SessionContextProvider } from "@supabase/auth-helpers-react";
+import { useState } from "react";
+import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";
 
 const colors = {
   brand: {
@@ -14,10 +17,16 @@ const colors = {
 const theme = extendTheme({ colors });
 
 function MyApp({ Component, pageProps }) {
+  const [supabaseClient] = useState(() => createBrowserSupabaseClient());
   return (
-    <ChakraProvider theme={theme}>
-      <Component {...pageProps} />
-    </ChakraProvider>
+    <SessionContextProvider
+      supabaseClient={supabaseClient}
+      initialSession={pageProps.initialSession}
+    >
+      <ChakraProvider theme={theme}>
+        <Component {...pageProps} />
+      </ChakraProvider>
+    </SessionContextProvider>
   );
 }
 

@@ -89,12 +89,34 @@ a {
   display: none;
 }
 
-form {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
-}
 
 .switch {
   padding-top: 2rem;
 }
+
+.loginImg {
+  height: 100vh;
+  background-image: url(../public/images/login.png);
+  background-position: center;
+  background-size:cover;
+
+}
+
+.loginForm {
+  width: 25rem;
+  margin: auto auto;
+}
+
+.myTrueClass {
+  width: 16px;
+  height: 11px;
+  background-image:url('../public/images/true.png');
+}
+
+.myFalseClass {
+  width: 14px;
+  height: 14px;
+  background-image:url('../public/images/false.png');
+}
+
+

@@ -67,8 +67,8 @@ function Form(props) {
               )}
             </FormControl>
 
-            {/* <FormControl as={SimpleGrid} columns={{ base: 2, lg: 2 }}>
-              <FormLabel htmlFor="plakate" mb="0" class="switch__label">
+            <FormControl as={SimpleGrid} columns={{ base: 2, lg: 2 }}>
+              <FormLabel htmlFor="plakate" mb="5" mt="5" class="switch__label">
                 Plakate
               </FormLabel>
               <Switch
@@ -76,13 +76,15 @@ function Form(props) {
                 colorScheme="teal"
                 size="lg"
                 class="switch"
+                mb="5"
+                mt="5"
               />
 
               <FormLabel htmlFor="flyer" mb="0" class="switch__label">
                 Flyer
               </FormLabel>
               <Switch id="flyer" colorScheme="teal" size="lg" class="switch" />
-            </FormControl> */}
+            </FormControl>
           </DrawerBody>
 
           <DrawerFooter>

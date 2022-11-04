@@ -1,3 +1,4 @@
+import { withPageAuth } from "@supabase/auth-helpers-nextjs";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Logo from "../public/images/logo2.png";
@@ -10,7 +11,7 @@ export default function IndexPage() {
   return (
     <>
       <div className="logo">
-        <Image src={Logo} />
+        <Image src={Logo} alt="logo" />
       </div>
       <div>
         <DynamicMap />
@@ -18,3 +19,5 @@ export default function IndexPage() {
     </>
   );
 }
+
+export const getServerSideProps = withPageAuth({ redirectTo: "/login" });
