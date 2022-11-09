@@ -41,7 +41,7 @@ function Form(props) {
             onSubmit={(evt) => {
               evt.preventDefault();
               if (!isError) {
-                props.onRequestSave({ input, poster, flyer });
+                props.onRequestSave({ name: input, plakate: poster, flyer });
               }
             }}
           >

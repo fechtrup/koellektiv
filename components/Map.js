@@ -54,7 +54,29 @@ export default function Map() {
           onClose();
         }}
         onRequestSave={(pinValues) => {
-          console.log(pinValues);
+          // console.log(pinValues);
+          const listOfPins = pins.filter((pin) => {
+            return pin.isPending;
+          });
+          const databasePin = listOfPins[0];
+          const saveToDatabase = { ...databasePin, ...pinValues };
+          delete saveToDatabase.isPending;
+          console.log(saveToDatabase);
+          supabaseClient
+            .from("pins")
+            .insert(saveToDatabase)
+            .then((result) => {
+              if (result.statusText === "Created") {
+                supabaseClient
+                  .from("pins")
+                  .select("*")
+                  .then((result) => {
+                    if (result.data) {
+                      setPins(result.data);
+                    }
+                  });
+              }
+            });
           onClose();
         }}
       />
@@ -70,9 +92,6 @@ export default function Map() {
             const lat = event.latlng.lat;
             const lng = event.latlng.lng;
             const pin = {
-              name: "Trinkgenossen",
-              plakate: true,
-              flyer: true,
               lat,
               lng,
               isPending: true,
