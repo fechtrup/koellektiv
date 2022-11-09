@@ -104,7 +104,7 @@ function Form(props) {
               </FormControl>
             </DrawerBody>
 
-            <DrawerFooter>
+            <DrawerFooter pos="absolute" bottom="10" leftt="0">
               <Button variant="outline" mr={3} onClick={props.onCancel}>
                 Schließen
               </Button>
