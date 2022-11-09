@@ -53,13 +53,8 @@ export default function Map() {
           });
           onClose();
         }}
-        onSave={() => {
-          setPins((oldPins) => {
-            return oldPins.map((pin) => {
-              pin.isPending = false;
-              return pin;
-            });
-          });
+        onRequestSave={(pinValues) => {
+          console.log(pinValues);
           onClose();
         }}
       />
