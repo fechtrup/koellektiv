@@ -5,7 +5,7 @@ import { extendTheme } from "@chakra-ui/react";
 import { SessionContextProvider } from "@supabase/auth-helpers-react";
 import { useState } from "react";
 import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react";
 
 const colors = {
   brand: {
@@ -15,7 +15,15 @@ const colors = {
   },
 };
 
-const theme = extendTheme({ colors });
+const breakpoints = {
+  sm: "30em",
+  md: "48em",
+  lg: "62em",
+  xl: "80em",
+  "2xl": "96em",
+};
+
+const theme = extendTheme({ colors, breakpoints });
 
 function MyApp({ Component, pageProps }) {
   const [supabaseClient] = useState(() => createBrowserSupabaseClient());
@@ -29,7 +37,6 @@ function MyApp({ Component, pageProps }) {
       </ChakraProvider>
       <Analytics />
     </SessionContextProvider>
-    
   );
 }
 

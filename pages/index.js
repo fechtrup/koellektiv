@@ -1,3 +1,4 @@
+import { Box } from "@chakra-ui/react";
 import { withPageAuth } from "@supabase/auth-helpers-nextjs";
 import dynamic from "next/dynamic";
 import Image from "next/image";
@@ -10,9 +11,9 @@ const DynamicMap = dynamic(() => import("../components/Map"), {
 export default function IndexPage() {
   return (
     <>
-      <div className="logo">
-        <Image src={Logo} alt="logo" />
-      </div>
+      <Box className="logo">
+        <Image src={Logo} alt="logo" width={247} height={80} />
+      </Box>
       <div>
         <DynamicMap />
       </div>
