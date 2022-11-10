@@ -4,7 +4,7 @@ import osm from "../utils/osm-providers";
 import L from "leaflet";
 import Pin from "../public/images/pin.png";
 import PendingPin from "../public/images/pendingPin.png";
-import Form from "../components/Form";
+import Form from "../components/addPin";
 import { useDisclosure } from "@chakra-ui/react";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 

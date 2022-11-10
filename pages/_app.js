@@ -5,6 +5,7 @@ import { extendTheme } from "@chakra-ui/react";
 import { SessionContextProvider } from "@supabase/auth-helpers-react";
 import { useState } from "react";
 import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";
+import { Analytics } from '@vercel/analytics/react';
 
 const colors = {
   brand: {
@@ -26,7 +27,9 @@ function MyApp({ Component, pageProps }) {
       <ChakraProvider theme={theme}>
         <Component {...pageProps} />
       </ChakraProvider>
+      <Analytics />
     </SessionContextProvider>
+    
   );
 }
 
