@@ -38,7 +38,7 @@ export default function IndexPage() {
               supabaseClient.auth
                 .signInWithOtp({
                   email,
-                  options: { emailRedirectTo: "http://localhost:3000/" },
+                  options: { emailRedirectTo: "http://koellektiv.vercel.app/" },
                 })
                 .then(() => {
                   <p>Success</p>;
