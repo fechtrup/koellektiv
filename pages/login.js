@@ -30,7 +30,7 @@ export default function IndexPage() {
       <div className="logo">
         <Image src={Logo} alt="Logo" />
       </div>
-      <Flex>
+      <Flex direction={{ base: 'column-reverse', md: 'column-reverse', lg: 'row' }}>
         <Flex flex="2" justify="center" align="center">
           <form
             onSubmit={(evt) => {
@@ -51,6 +51,7 @@ export default function IndexPage() {
               align="flex-end"
               justify="flex-start"
               direction="column"
+              m={20}
             >
               <p>
                 Logge dich jetzt in unser köllektives Planungstool ein, <br />

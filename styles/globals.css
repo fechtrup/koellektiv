@@ -37,13 +37,7 @@ a {
   z-index: 1000;
 }
 
-@media only screen and (max-width: 600px) {
-  .logo {
-    top: 0.75rem;
-    right: 0.75rem;
-    width: 175px;
-  }
-}
+
 
 .button {
   width: 10rem;
@@ -126,3 +120,14 @@ a {
 }
 
 
+@media only screen and (max-width: 990px) {
+  .logo {
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 175px;
+  }
+
+  .loginImg {
+    height: 50vh;
+  }
+}
