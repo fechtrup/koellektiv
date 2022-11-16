@@ -1,12 +1,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Logo from "../public/images/logo2.png";
-import {
-  Input,
-  Button,
-  Flex,
-  Box
-} from "@chakra-ui/react";
+import { Input, Button, Flex, Box } from "@chakra-ui/react";
 import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/router";
 
@@ -27,7 +22,9 @@ export default function IndexPage() {
       <div className="logo">
         <Image src={Logo} alt="Logo" />
       </div>
-      <Flex direction={{ base: 'column-reverse', md: 'column-reverse', lg: 'row' }}>
+      <Flex
+        direction={{ base: "column-reverse", md: "column-reverse", lg: "row" }}
+      >
         <Flex flex="2" justify="center" align="center">
           <form
             onSubmit={(evt) => {
@@ -38,7 +35,7 @@ export default function IndexPage() {
                   options: { emailRedirectTo: "http://koellektiv.vercel.app/" },
                 })
                 .then(() => {
-                  <p>Success</p>;
+                  router.push("/loginSuccessful");
                 })
                 .catch(() => {});
             }}
