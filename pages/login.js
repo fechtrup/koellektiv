@@ -3,12 +3,9 @@ import Image from "next/image";
 import Logo from "../public/images/logo2.png";
 import {
   Input,
-  FormControl,
   Button,
   Flex,
-  Box,
-  Grid,
-  GridItem,
+  Box
 } from "@chakra-ui/react";
 import { useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/router";

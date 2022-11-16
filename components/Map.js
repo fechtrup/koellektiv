@@ -1,4 +1,4 @@
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 import { useEffect, useState } from "react";
 import osm from "../utils/osm-providers";
 import L from "leaflet";
@@ -7,6 +7,10 @@ import PendingPin from "../public/images/pendingPin.png";
 import Form from "../components/addPin";
 import { useDisclosure } from "@chakra-ui/react";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
+import UserLocate from "./UserLocate";
+import SearchControl from "./SearchControl";
+// import { OpenStreetMapProvider } from "leaflet-geosearch";
+
 
 const markerIcon = new L.Icon({
   iconUrl: Pin.src,
@@ -39,6 +43,9 @@ export default function Map() {
         }
       });
   }, [supabaseClient]);
+
+  // const prov = OpenStreetMapProvider();
+
 
   return (
     <>
@@ -125,7 +132,30 @@ export default function Map() {
             </Popup>
           </Marker>
         ))}
+
+          {location.loaded && !location.error && (
+            <Marker icon={markerIcon} 
+            position={[location.coordinates.lat, location.coordinates.lng]}>
+
+            </Marker>
+          )}
+       <UserLocate />
+
+       <SearchControl
+          provider={prov}
+          showMarker={true}
+          showPopup={false}
+          popupFormat={({ query, result }) => result.label}
+          maxMarkers={3}
+          retainZoomLevel={false}
+          animateZoom={true}
+          autoClose={false}
+          searchLabel={"Enter address, please"}
+          keepResult={true}
+        />
+       
       </MapContainer>
+     
     </>
   );
 }
