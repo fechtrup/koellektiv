@@ -19,6 +19,7 @@
     "@vercel/analytics": "^0.1.4",
     "framer-motion": "^7.6.1",
     "leaflet": "^1.9.2",
+    "leaflet-control-geocoder": "^2.4.0",
     "leaflet-geosearch": "^3.7.0",
     "leaflet.locatecontrol": "^0.78.0",
     "next": "12.3.1",

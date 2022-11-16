@@ -2624,6 +2624,13 @@
   dependencies:
     "language-subtag-registry" "~0.3.2"
 
+"leaflet-control-geocoder@^2.4.0":
+  "integrity" "sha512-b2QlxuFd40uIDbnoUI3U9fzfnB4yKUYlmsXjquJ2d2YjoJqnyVYcIJeErAVv3kPvX3nI0gzvBq1XHMgSVFrGkQ=="
+  "resolved" "https://registry.npmjs.org/leaflet-control-geocoder/-/leaflet-control-geocoder-2.4.0.tgz"
+  "version" "2.4.0"
+  optionalDependencies:
+    "open-location-code" "^1.0.0"
+
 "leaflet-geosearch@^3.7.0":
   "integrity" "sha512-pvDiBc+gnl0eCazT8Ls88cbCQN6NVFoYYqlK6wtQFxObkNlzlj1p919XKuhKJwrLQiF97GxY8pny5mcV9kCe6g=="
   "resolved" "https://registry.npmjs.org/leaflet-geosearch/-/leaflet-geosearch-3.7.0.tgz"
@@ -2850,6 +2857,11 @@
   "version" "1.4.0"
   dependencies:
     "wrappy" "1"
+
+"open-location-code@^1.0.0":
+  "integrity" "sha512-DBm14BSn40Ee241n80zIFXIT6+y8Tb0I+jTdosLJ8Sidvr2qONvymwqymVbHV2nS+1gkDZ5eTNpnOIVV0Kn2fw=="
+  "resolved" "https://registry.npmjs.org/open-location-code/-/open-location-code-1.0.3.tgz"
+  "version" "1.0.3"
 
 "optionator@^0.9.1":
   "integrity" "sha512-74RlY5FCnhq4jRxVUPKDaRwrVNXMqsGsiW6AJw4XK8hmtm10wC0ypZBLw5IIp85NZMr91+qd1RvvENwg7jjRFw=="
