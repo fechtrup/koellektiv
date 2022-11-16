@@ -11,7 +11,6 @@ import UserLocate from "./UserLocate";
 import SearchControl from "./SearchControl";
 // import { OpenStreetMapProvider } from "leaflet-geosearch";
 
-
 const markerIcon = new L.Icon({
   iconUrl: Pin.src,
   iconSize: [35, 45],
@@ -45,7 +44,6 @@ export default function Map() {
   }, [supabaseClient]);
 
   // const prov = OpenStreetMapProvider();
-
 
   return (
     <>
@@ -133,15 +131,15 @@ export default function Map() {
           </Marker>
         ))}
 
-          {location.loaded && !location.error && (
-            <Marker icon={markerIcon} 
-            position={[location.coordinates.lat, location.coordinates.lng]}>
+        {location.loaded && !location.error && (
+          <Marker
+            icon={markerIcon}
+            position={[location.coordinates.lat, location.coordinates.lng]}
+          ></Marker>
+        )}
+        <UserLocate />
 
-            </Marker>
-          )}
-       <UserLocate />
-
-       <SearchControl
+        {/* <SearchControl
           provider={prov}
           showMarker={true}
           showPopup={false}
@@ -152,10 +150,8 @@ export default function Map() {
           autoClose={false}
           searchLabel={"Enter address, please"}
           keepResult={true}
-        />
-       
+        /> */}
       </MapContainer>
-     
     </>
   );
 }
