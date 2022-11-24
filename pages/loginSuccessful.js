@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Logo from "../public/images/logo2.png";
-import { Flex, Box, Heading, Text } from "@chakra-ui/react";
+import { Heading, Text, Flex, Box } from "@chakra-ui/react";
 import Success from "../public/images/success-small.gif";
 
 export default function loginSuccessful() {
@@ -14,7 +14,6 @@ export default function loginSuccessful() {
       >
         <Flex flex="2" justify="center" align="center">
           <Flex
-            flex="1"
             gap={4}
             align="center"
             justify="flex-start"
@@ -33,10 +32,10 @@ export default function loginSuccessful() {
               <br /> bekommst gleich eine Email mit deinem Login-Link
             </Text>
           </Flex>
-          <Box flex="3">
-            <div className="loginImg"></div>
-          </Box>
         </Flex>
+        <Box flex="3">
+          <div className="loginImg"></div>
+        </Box>
       </Flex>
     </>
   );
