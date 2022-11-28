@@ -8,8 +8,7 @@ import Form from "../components/addPin";
 import { useDisclosure } from "@chakra-ui/react";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import UserLocate from "./UserLocate";
-import SearchControl from "./SearchControl";
-// import { OpenStreetMapProvider } from "leaflet-geosearch";
+import LeafletControlGeocoder from "./LeafletControlGeocoder";
 
 const markerIcon = new L.Icon({
   iconUrl: Pin.src,
@@ -42,8 +41,6 @@ export default function Map() {
         }
       });
   }, [supabaseClient]);
-
-  // const prov = OpenStreetMapProvider();
 
   return (
     <>
@@ -139,18 +136,7 @@ export default function Map() {
         )}
         <UserLocate />
 
-        {/* <SearchControl
-          provider={prov}
-          showMarker={true}
-          showPopup={false}
-          popupFormat={({ query, result }) => result.label}
-          maxMarkers={3}
-          retainZoomLevel={false}
-          animateZoom={true}
-          autoClose={false}
-          searchLabel={"Enter address, please"}
-          keepResult={true}
-        /> */}
+        <LeafletControlGeocoder />
       </MapContainer>
     </>
   );
